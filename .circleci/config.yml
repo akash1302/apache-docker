@@ -4,7 +4,7 @@ jobs:
    machine: true
    steps:
  #  - run:
-  #  command: |
+    command: |
    #    ssh-keyscan 13.59.53.222 >> ~/.ssh/known_hosts
 
      - run: |
