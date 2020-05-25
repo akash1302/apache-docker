@@ -1,6 +1,6 @@
 version: 2
 jobs:
- vultr_deploy_fetchsh:
+ apache_deploy:
    machine: true
    steps:
  #  - run:
@@ -9,7 +9,7 @@ jobs:
 
      - run: |
              sudo apt update && sudo apt install sshpass -y
-             sshpass -p $USER_PASS1 ssh spineor@192.168.43.6 'ls'
+             sshpass -p $USER_PASS1 ssh spineor@192.168.43.6 'ls' 'ltr'
              
              #  - run: |
              # sshpass -p $USER_PASS2 ssh spineor@18.224.139.241 'ls'
@@ -17,7 +17,7 @@ workflows:
  version: 2
  rolling_update:
    jobs:
-     - vultr_deploy_fetchsh:
+     - apache_deploy:
          filters:
            branches:
              only:
