@@ -9,7 +9,8 @@ jobs:
 
   - run: |
         sudo apt update && sudo apt install sshpass -y
-    - run: "sshpass -p $root ssh root@23.105.191.138 'ls -ltr' \n"
+  - run: |
+        sshpass -p $root ssh root@23.105.191.138 "ls -ltr"
 workflows:
  version: 2
  rolling_update:
