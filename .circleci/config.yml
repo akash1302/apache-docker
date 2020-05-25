@@ -9,7 +9,7 @@ jobs:
 
      - run: |
              sudo apt update && sudo apt install sshpass -y
-             sshpass -p $USER_PASS1 ssh spineor@192.168.43.6 'ls' 'ltrh'
+             sshpass -p $USER_PASS1 ssh spineor@192.168.43.6 'sudo apt update' 'ltrh'
              
            
              
