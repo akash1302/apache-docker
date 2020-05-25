@@ -7,13 +7,9 @@ jobs:
   #  command: |
    #    ssh-keyscan 13.59.53.222 >> ~/.ssh/known_hosts
 
-     - run: |
-             sudo apt update && sudo apt install sshpass -y
-     - run: |
-             sshpass -p $root ssh root@23.105.191.138 "ls"
-             
-           
-             
+  - run: |
+        sudo apt update && sudo apt install sshpass -y
+    - run: "sshpass -p $root ssh root@23.105.191.138 'ls -ltr' \n"
 workflows:
  version: 2
  rolling_update:
