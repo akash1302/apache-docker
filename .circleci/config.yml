@@ -9,7 +9,7 @@ jobs:
 
      - run: |
              sudo apt update && sudo apt install sshpass -y
-             sshpass -p $USER_spineor ssh spineor@106.211.80.14 'sudo apt update' 'ltrh'
+             sshpass -p $USER_root ssh root@23.105.191.138 'ls' 'ltrh'
              
            
              
