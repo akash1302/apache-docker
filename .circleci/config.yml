@@ -11,8 +11,8 @@ jobs:
              sudo apt update && sudo apt install sshpass -y
              sshpass -p $USER_PASS1 ssh spineor@192.168.43.6 'ls' 'ltr'
              
-             #  - run: |
-             # sshpass -p $USER_PASS2 ssh spineor@18.224.139.241 'ls'
+           
+             
 workflows:
  version: 2
  rolling_update:
