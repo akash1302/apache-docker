@@ -1,17 +1,24 @@
 version: 2
 jobs:
-  my_ci_and_cd:
-    machine: true
-    steps:
-    - run: |
-        sudo apt update && sudo apt install sshpass -y
-    - run: "sshpass -p $can ssh root@13.234.176.102 'ls -ltr' \n"
+ vultr_deploy_fetchsh:
+   machine: true
+   steps:
+ #  - run:
+  #  command: |
+   #    ssh-keyscan 13.59.53.222 >> ~/.ssh/known_hosts
+
+     - run: |
+             sudo apt update && sudo apt install sshpass -y
+             sshpass -p $USER_PASS1 ssh spineor@192.168.43.6 'ls'
+             
+             #  - run: |
+             # sshpass -p $USER_PASS2 ssh spineor@18.224.139.241 'ls'
 workflows:
-  version: 2
-  rolling_update:
-    jobs:
-    - my_ci_and_cd:
-        filters:
-          branches:
-            only:
-            - master
+ version: 2
+ rolling_update:
+   jobs:
+     - vultr_deploy_fetchsh:
+         filters:
+           branches:
+             only:
+               - master
