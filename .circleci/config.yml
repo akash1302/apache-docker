@@ -5,12 +5,11 @@ jobs:
    steps:
  #  - run:
   #  command: |
-   # ssh-keyscan 13.59.53.222 >> ~/.ssh/known_hosts
+   #    ssh-keyscan 13.59.53.222 >> ~/.ssh/known_hosts
 
      - run: |
              sudo apt update && sudo apt install sshpass -y
-             sshpass -p $USER_root ssh root@23.105.191.138 'ls -ltr'
-             
+             sshpass -p $USER_root ssh root@23.105.191.138 'ls'
 workflows:
  version: 2
  rolling_update:
@@ -20,3 +19,4 @@ workflows:
            branches:
              only:
                - master
+
